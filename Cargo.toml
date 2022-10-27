@@ -1,0 +1,20 @@
+[package]
+name = "ecp"
+version = "0.0.2"
+edition = "2021"
+authors = [ "g-r-a-v-i-t-y-w-a-v-e" ]
+
+[dependencies]                                                          # ...and why we need them:
+base64 = "0.13.0"                                                       # Message data encoding
+config = "0.13"                                                         # Config files
+futures-channel = "0.3"                                                 # MPSC
+futures-util = "0.3"                                                    # Futures pinning
+rand = "0.8"                                                            # RNG
+serde_json = "1.0"                                                      # Response parsing
+sha1 = "0.10"                                                           # Checksum calculations
+tokio = { version = "1.20.1", default-features = false, features = [    # Async runtime
+    "macros",                                                           # Tokio macros
+    "net",                                                              # Async TCP/IP
+    "rt-multi-thread",                                                  # Async tests
+] }
+tokio-tungstenite = "0.17"                                              # Async WebSockets
